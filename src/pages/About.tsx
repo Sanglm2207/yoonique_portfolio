@@ -4,7 +4,7 @@ import { motion, useScroll, useSpring, Variants } from 'framer-motion';
 import { Container, Section } from '../styles/GlobalStyle';
 import SEO from '../components/SEO';
 
-import aboutImage from '../assets/images/Aboutme.webp';
+import aboutImage from '../assets/images/Aboutme.png';
 
 // Lazy load ResumeDownload to reduce initial bundle size
 const ResumeDownload = lazy(() => import('../components/ResumeDownload'));
