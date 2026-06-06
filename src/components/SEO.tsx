@@ -16,11 +16,11 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Rolan Lobo (Rolan RNR) - Full Stack Developer & Software Engineer',
-  description = 'Rolan Lobo (also known as Rolan RNR) is a Freelance Full Stack Developer & Software Engineer specializing in security applications, mobile app development, steganography, polyglot files, and modern web development. Creator of InvisioVault, YouTube Downloader, and Sortify.',
-  keywords = 'Rolan Lobo, Rolan RNR, Rolan rnr, rolan lobo, Full Stack Developer, Software Engineer, Freelance Developer, Mobile App Developer, React Native, Flutter, Freelancer India, Web Developer, Python Developer, Flask Developer, React Developer, Steganography, Polyglot Files, InvisioVault, RNR',
-  image = 'https://rolan-rnr.netlify.app/logo512.png',
-  url = 'https://rolan-rnr.netlify.app/',
+  title = 'Lai Minh Sang (Yoo) - Full Stack Developer & Software Engineer',
+  description = 'Lại Minh Sáng (also known as Yoo) is a Freelance Full Stack Developer & Software Engineer specializing in security applications, mobile app development, steganography, polyglot files, and modern web development. Creator of InvisioVault, YouTube Downloader, and Sortify.',
+  keywords = 'Lại Minh Sáng, Lai Minh Sang, kaidev99, yoonique, Full Stack Developer, Software Engineer, Freelance Developer, Mobile App Developer, React Native, Flutter, Freelancer India, Web Developer, Python Developer, Flask Developer, React Developer, Java Developer, SQL, InvisioVault, Database',
+  image = 'https://yoonique.netlify.app/logo512.png',
+  url = 'https://yoonique.netlify.app/',
   type = 'website',
   publishedAt,
   modifiedAt,
@@ -28,9 +28,9 @@ const SEO: React.FC<SEOProps> = ({
   noIndex = false
 }) => {
 
-  const siteName = 'Rolan Lobo (Rolan RNR) Portfolio';
-  const twitterHandle = '@RolanLobo4';
-
+  const siteName = 'Lai Minh Sang (Yoo) Portfolio';
+  const twitterHandle = '@kaidev99';
+``
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -38,7 +38,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Rolan Lobo (Rolan RNR)" />
+      <meta name="author" content="Lai Minh Sang (Yoo)" />
       <link rel="canonical" href={url} />
 
       {/* Open Graph / Facebook */}
@@ -94,14 +94,14 @@ const SEO: React.FC<SEOProps> = ({
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
-          name: 'Rolan Lobo',
-          alternateName: ['Rolan RNR', 'RNR', 'Rolan rnr'],
-          url: 'https://rolan-rnr.netlify.app/',
-          image: 'https://rolan-rnr.netlify.app/logo512.png',
+          name: 'Lai Minh Sang',
+          alternateName: ['Yoo', 'Lai Minh Sang'],
+          url: 'https://yoonique.netlify.app/',
+          image: 'https://yoonique.netlify.app/logo512.png',
           sameAs: [
-            'https://github.com/Mrtracker-new',
-            'https://www.linkedin.com/in/rolan-lobo/',
-            'https://dev.to/rolan_r_n_r'
+            'https://github.com/sanglm2207',
+            'https://www.linkedin.com/in/kaidev99/',
+            'https://dev.to/kaidev99'
           ],
           jobTitle: 'Full Stack Developer',
           worksFor: {
@@ -110,12 +110,12 @@ const SEO: React.FC<SEOProps> = ({
           },
           address: {
             '@type': 'PostalAddress',
-            addressRegion: 'Karnataka',
-            addressCountry: 'India'
+            addressRegion: 'Hanoi',
+            addressCountry: 'Vietnam'
           },
-          email: 'rolanlobo901@gmail.com',
+          email: 'sanglm2207@gmail.com',
           knowsAbout: [
-            'JavaScript',
+            'Java',
             'TypeScript',
             'React',
             'Node.js',
@@ -127,14 +127,14 @@ const SEO: React.FC<SEOProps> = ({
             'Software Engineering',
             'Cybersecurity',
             'Data Encryption',
-            'Steganography',
-            'Polyglot Files',
-            'File Hiding',
+            'Airflow',
+            'Apache Spark',
+            'Machine Learning',
             'Cryptography',
             'Security Applications',
             'Mobile App Development',
             'React Native',
-            'Flutter',
+            'Data Engineer',
             'Freelance Development'
           ]
         })}
@@ -145,13 +145,13 @@ const SEO: React.FC<SEOProps> = ({
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'Rolan Lobo (Rolan RNR) Portfolio',
-          alternateName: ['Rolan RNR Portfolio', 'Rolan Lobo Portfolio'],
-          url: 'https://rolan-rnr.netlify.app/',
+          name: 'Lai Minh Sang (Yoo) Portfolio',
+          alternateName: ['Yoo Portfolio', 'Lai Minh Sang Portfolio'],
+          url: 'https://yoonique.netlify.app/',
           author: {
             '@type': 'Person',
-            name: 'Rolan Lobo',
-            alternateName: 'Rolan RNR'
+            name: 'Lai Minh Sang',
+            alternateName: 'Yoo'
           }
         })}
       </script>
@@ -161,42 +161,57 @@ const SEO: React.FC<SEOProps> = ({
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          '@id': 'https://rolan-rnr.netlify.app/#organization',
-          name: 'RNR - Rolan Lobo Portfolio',
-          alternateName: ['RNR', 'Rolan RNR'],
-          url: 'https://rolan-rnr.netlify.app/',
+          '@id': 'https://yoonique.netlify.app/#organization',
+          name: 'YOO - Lai Minh Sang Portfolio',
+          alternateName: ['Yoo', 'Lai Minh Sang Portfolio'],
+          url: 'https://yoonique.netlify.app/',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://rolan-rnr.netlify.app/logo512.png',
+            url: 'https://yoonique.netlify.app/logo512.png',
             width: 512,
             height: 512
           },
           description: 'Full Stack Developer & Software Engineer specializing in modern web applications, desktop software, and security-focused solutions.',
           brand: {
             '@type': 'Brand',
-            name: 'Rolan RNR'
+            name: 'Lại Minh Sáng (Yoo)',
+            alternateName: 'Lai Minh Sang (Yoo)',
+            url: 'https://yoonique.netlify.app/',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://yoonique.netlify.app/logo512.png',
+              width: 512,
+              height: 512
+            }
           },
           foundingDate: '2023',
           founder: {
             '@type': 'Person',
-            name: 'Rolan Lobo',
-            alternateName: 'Rolan RNR'
+            name: 'Lai Minh Sang',
+            alternateName: 'Yoo',
+            url: 'https://yoonique.netlify.app/',
+            image: 'https://yoonique.netlify.app/logo512.png',
+            jobTitle: 'Full Stack Developer',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'YOO - Lai Minh Sang Portfolio'
+            }
           },
           address: {
             '@type': 'PostalAddress',
-            addressRegion: 'Karnataka',
-            addressCountry: 'IN'
+            addressRegion: 'Hanoi',
+            addressCountry: 'VN'
           },
           contactPoint: {
             '@type': 'ContactPoint',
-            email: 'rolanlobo901@gmail.com',
+            email: 'sanglm2207@gmail.com',
             contactType: 'Customer Service',
-            availableLanguage: ['English', 'Hindi', 'Kannada']
+            availableLanguage: ['English', 'Vietnamese']
           },
           sameAs: [
-            'https://github.com/Mrtracker-new',
-            'https://www.linkedin.com/in/rolan-lobo/',
-            'https://dev.to/rolan_r_n_r'
+            'https://github.com/sanglm2207',
+            'https://www.linkedin.com/in/kaidev99/',
+            'https://dev.to/kaidev99'
           ]
         })}
       </script>

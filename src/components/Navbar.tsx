@@ -169,7 +169,7 @@ const navItems = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/projects', label: 'Projects' },
-  { path: '/blog', label: 'Blog' },
+  // { path: '/blog', label: 'Blog' },
   { path: '/contact', label: 'Contact' }
 ];
 
@@ -207,7 +207,7 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Logo to="/" onClick={() => setMobileMenuOpen(false)}>
-            <span>RNR</span>
+            <span>YOO</span>
           </Logo>
 
           <NavLinks>

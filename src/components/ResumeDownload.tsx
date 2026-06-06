@@ -164,11 +164,11 @@ const ResumeDownload: React.FC<ResumeDownloadProps> = ({
     >
       <Button
         as="a"
-        href="/resume_rolan_lobo.pdf"
-        download="Rolan_Lobo_Resume.pdf"
+        href="/resume_yoo_2.pdf"
+        download="Lai_Minh_Sang_Resume.pdf"
         variant={variant}
         size={size}
-        aria-label="Download Rolan Lobo's Resume"
+        aria-label="Download Lai Minh Sang's Resume"
       >
         📄 Download Resume
       </Button>
@@ -184,7 +184,7 @@ const ResumeDownload: React.FC<ResumeDownloadProps> = ({
           >
             <PreviewCard $position={tooltipPosition}>
               <PreviewImageContainer>
-                <img src="/Resume_preview.webp" alt="Resume Preview" />
+                <img src="/Resume_preview.png" alt="Resume Preview" />
               </PreviewImageContainer>
               <HintText>
                 <span>Click</span> to download full resume

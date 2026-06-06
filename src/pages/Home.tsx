@@ -10,12 +10,12 @@ import { getLatestPosts, BlogPost } from '../utils/devto';
 // Profile images served from /public — not imported via webpack so they are
 // never bundled into the JS chunk. The browser fetches only the size it needs
 // via the srcSet attribute at render time.
-const profileImage    = '/images/Home_dp.webp';
-const profileImage900 = '/images/Home_dp_900.webp';
-const profileImage600 = '/images/Home_dp_600.webp';
-const profileImage450 = '/images/Home_dp_450.webp';
-const profileImage300 = '/images/Home_dp_300.webp';
-const profileImage150 = '/images/Home_dp_150.webp';
+const profileImage    = '/images/Home_dp.jpg';
+const profileImage900 = '/images/Home_dp_900.jpg';
+const profileImage600 = '/images/Home_dp_600.jpg';
+const profileImage450 = '/images/Home_dp_450.jpg';
+const profileImage300 = '/images/Home_dp_300.jpg';
+const profileImage150 = '/images/Home_dp_150.jpg';
 
 // Lazy load components to reduce initial bundle size
 const BlogCard = lazy(() => import('../components/BlogCard'));
@@ -31,7 +31,7 @@ const HeroSection = styled.section`
   align-items: center;
   position: relative;
   padding-top: 100px;
-  padding-bottom: var(--spacing-20);
+  padding-bottom: var(--spacing-12);
   
   /* Background Elements */
   &::before {
@@ -54,7 +54,7 @@ const HeroSection = styled.section`
     max-height: none;
     height: auto;
     padding-top: 120px;
-    padding-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-6);
     overflow-x: clip; /* Clip background gradient, but don't create scroll container */
     
     &::before {
@@ -285,13 +285,10 @@ const CTAContainer = styled(motion.div)`
 `;
 
 const StatsBar = styled(motion.div)`
-  position: absolute;
-  bottom: var(--spacing-6);
-  left: var(--spacing-4);
-  right: var(--spacing-4);
+  position: relative;
+  margin: var(--spacing-8) auto 0;
   max-width: calc(var(--breakpoint-lg) - var(--spacing-8));
-  margin: 0 auto;
-  padding: var(--spacing-5) var(--spacing-6);
+  padding: var(--spacing-4) var(--spacing-6);
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -321,20 +318,14 @@ const StatsBar = styled(motion.div)`
   }
   
   @media (max-width: 1200px) {
-    left: var(--spacing-3);
-    right: var(--spacing-3);
     padding: var(--spacing-4) var(--spacing-5);
   }
   
   @media (max-width: 968px) {
     /* Mobile: Keep visuals but reduce spacing for unity */
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
     max-width: 100%;
     margin: var(--spacing-6) auto 0; /* Tighter spacing for unified feel */
-    padding: var(--spacing-5) var(--spacing-4);
+    padding: var(--spacing-4) var(--spacing-4);
     background: rgba(30, 41, 59, 0.4); /* Match About page glassmorphic style */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -525,10 +516,10 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Rolan Lobo (Rolan RNR) - Full Stack Developer | Building Digital Experiences"
-        description="I'm Rolan Lobo (Rolan RNR), a Full Stack Developer specializing in building exceptional digital experiences, software, and mobile apps. Explore my portfolio of projects, skills, and services."
-        image="https://rolan-rnr.netlify.app/rolan-lobo-home.webp"
-        url="https://rolan-rnr.netlify.app/"
+        title="Lại Minh Sáng (YOO) - Full Stack Developer | Building Digital Experiences"
+        description="I'm Lai Minh Sang (YOO), a Full Stack Developer specializing in building exceptional digital experiences, software, and mobile apps. Explore my portfolio of projects, skills, and services."
+        image="https://yoonique.netlify.app/yoo-lobo-home.png"
+        url="https://yoonique.netlify.app/"
       />
 
       <HeroSection>
@@ -541,7 +532,7 @@ const Home: React.FC = () => {
           <TextContent>
             <GreetingPill variants={itemVariants}>
               <span style={{ fontSize: '1.2em' }}>👋</span>
-              <GreetingText>Hi, I am Rolan Lobo</GreetingText>
+              <GreetingText>Hi, I am Lại Minh Sáng</GreetingText>
             </GreetingPill>
 
             <Headline variants={itemVariants}>
@@ -604,7 +595,7 @@ const Home: React.FC = () => {
                     src={profileImage450}
                     srcSet={`${profileImage150} 150w, ${profileImage300} 300w, ${profileImage450} 450w, ${profileImage600} 600w, ${profileImage900} 900w, ${profileImage} 1673w`}
                     sizes="(max-width: 968px) 280px, 450px"
-                    alt="Rolan Lobo (Rolan RNR) - Full Stack Developer"
+                    alt="Lại Minh Sáng (YOO) - Full Stack Developer"
                   />
                 </StylizedImage>
               ) : (
@@ -617,7 +608,7 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <ResumePreviewContainer>
-                    <img src="/Resume_preview.webp" alt="Resume Preview" />
+                    <img src="/Resume_preview.png" alt="Resume Preview" />
                   </ResumePreviewContainer>
                   <ResumeHintText>
                     Click button to download full resume

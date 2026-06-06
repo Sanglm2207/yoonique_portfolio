@@ -620,32 +620,64 @@ const ServiceFeature = styled.li`
 // Data
 const timelineData = [
   {
-    year: '2024 - Present',
-    title: 'Computer Science Degree',
-    role: 'Student & Freelancer',
-    description: 'Pursuing advanced studies in Computer Science while actively freelancing. Deepening knowledge in algorithms, system design, and AI/ML foundations while building real-world projects for clients.',
-    tags: ['Algorithms', 'System Design', 'AI Foundations', 'Freelancing']
+    year: 'Mar 2024 - Present',
+    title: 'Fastlance.vn',
+    role: 'Freelance Software Developer',
+    description:
+      'Working as a freelance Software Developer, delivering end-to-end software solutions for startups, small businesses, and individual clients. Specialized in designing, developing, and deploying scalable web applications with a focus on clean architecture, performance, and maintainability.',
+    tags: [
+      'Full-stack Development',
+      'System Architecture',
+      'API Development',
+      'Frontend Implementation',
+      'Cloud Services',
+      'Performance Optimization'
+    ]
   },
   {
-    year: '2022 - 2023',
-    title: 'Industry Experience',
-    role: 'Tool & Die Making Intern/Designer',
-    description: 'I worked in the industry, where I developed problem-solving skills and gained a solid understanding of both machines and software.',
-    tags: ['Team Collaboration', 'Agile', 'Clean Code', 'Debugging']
+    year: 'Apr 2022 - Jan 2024',
+    title: 'FUNIX .,JSC ',
+    role: 'Software Developer',
+    description:
+      'Worked on a Learning Management System serving over 20,000 active students. Built and integrated an AI-powered Q&A system to automate first-line support, optimized database queries, enhanced data modeling, and developed key interaction features such as mentor booking and assignment review. Helped reduce manual support workload by 60% and improved system response time by 25%.',
+    tags: [
+      'Node.js',
+      'REST APIs',
+      'AI Q&A System',
+      'Database Optimization',
+      'LMS',
+      'System Performance'
+    ]
   },
   {
-    year: '2019 - 2022',
-    title: 'Diploma in DTDM',
-    role: 'Student',
-    description: 'Graduated with a Diploma in Tool & Die Making (DTDM). Developed a strong engineering mindset, precision, and problem-solving skills that translated seamlessly into software engineering.',
-    tags: ['Engineering Fundamentals', 'Precision', 'Problem Solving', 'Logic']
+    year: 'Mar 2020 - Mar 2022',
+    title: 'ITSOL .,JSC',
+    role: 'Java Software Engineer',
+    description:
+      'Worked in the financial and banking domain, focusing on digital signature integration and reliable asynchronous processing. Designed resilient callback mechanisms using Domain-Driven Design principles, implemented Apache Kafka for message queuing, and built secure connectors for external digital signature providers. Ensured reliable execution of async tasks and zero data loss under high-load scenarios.',
+    tags: [
+      'Java',
+      'Domain-Driven Design',
+      'Apache Kafka',
+      'Async Processing',
+      'Digital Signature',
+      'Banking Domain'
+    ]
   },
   {
-    year: '2019',
-    title: 'The Spark',
-    role: 'Aspiring Developer',
-    description: 'The beginning of my journey into technology. Started self-learning programming basics, exploring Python and web technologies, and writing my first lines of code.',
-    tags: ['Python Base', 'Web Basics', 'Self-Learning', 'Curiosity']
+    year: 'Sep 2019 - Dec 2019',
+    title: 'THUAN THANH TECH Co., Ltd',
+    role: 'Java Software Developer Intern',
+    description:
+      'Started professional software development as a Java intern. Designed and developed a Windows desktop application for managing and visualizing real-time logs, including complex log parsing, data validation, dashboard visualization, and FpML data processing.',
+    tags: [
+      'Java',
+      'Angular',
+      'Desktop Application',
+      'Log Parsing',
+      'Dashboard',
+      'FpML'
+    ]
   }
 ];
 
@@ -653,19 +685,82 @@ const timelineData = [
 const skillsData = [
   {
     category: 'Frontend',
-    skills: ['React', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Styled Components', 'Framer Motion', 'Responsive Design']
+    skills: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'HTML/CSS',
+      'Tailwind CSS',
+      'Styled Components',
+      'Framer Motion',
+      'Responsive Design'
+    ]
+  },
+  {
+    category: 'Mobile',
+    skills: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Mobile UI Development',
+      'Navigation',
+      'API Integration',
+      'Push Notifications',
+      'Cross-platform Development'
+    ]
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Flask', 'Node.js', 'REST APIs', 'Database Design', 'Authentication']
+    skills: [
+      'Java',
+      'Spring Boot',
+      'Node.js',
+      'REST APIs',
+      'JWT Authentication',
+      'Database Design',
+      'Microservices',
+      'Apache Kafka'
+    ]
   },
   {
-    category: 'Tools & Workflow',
-    skills: ['Git & GitHub', 'VS Code', 'Postman', 'npm/pip', 'Chrome DevTools', 'Figma']
+    category: 'Data Engineering',
+    skills: [
+      'Python',
+      'Apache Spark',
+      'Apache Airflow',
+      'ETL Pipelines',
+      'Data Modeling',
+      'PostgreSQL',
+      'MySQL',
+      'MongoDB'
+    ]
+  },
+  {
+    category: 'DevOps & Tools',
+    skills: [
+      'Git & GitHub',
+      'Docker',
+      'AWS',
+      'Redis',
+      'Postman',
+      'VS Code',
+      'IntelliJ IDEA',
+      'Linux'
+    ]
   },
   {
     category: 'Other Skills',
-    skills: ['Problem Solving', 'Clean Code', 'Debugging', 'System Design', 'UI/UX Design', 'Performance Optimization']
+    skills: [
+      'Problem Solving',
+      'Clean Code',
+      'Debugging',
+      'System Design',
+      'Performance Optimization',
+      'API Design',
+      'Agile Collaboration',
+      'Self-learning'
+    ]
   }
 ];
 
@@ -674,41 +769,136 @@ const servicesData = [
   {
     icon: '🌐',
     title: 'Web Development',
-    description: 'Modern, responsive websites and web applications built with the latest technologies.',
-    features: ['Custom web applications', 'E-commerce platforms', 'Landing pages', 'Performance optimization']
+    description: 'Modern, responsive websites and web applications built with scalable and maintainable technologies.',
+    features: [
+      'Custom web applications',
+      'E-commerce platforms',
+      'Landing pages',
+      'Admin dashboards'
+    ]
   },
   {
     icon: '💻',
     title: 'Full-Stack Applications',
-    description: 'End-to-end solutions from database design to polished user interfaces.',
-    features: ['RESTful API development', 'Database architecture', 'User authentication', 'Real-time features']
+    description: 'End-to-end software solutions from database design and backend APIs to frontend implementation.',
+    features: [
+      'RESTful API development',
+      'Database architecture',
+      'User authentication',
+      'Real-time features'
+    ]
   },
   {
-    icon: '🎨',
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces that prioritize user experience and accessibility.',
-    features: ['Responsive design', 'Wireframing & prototyping', 'Design systems', 'Brand consistency']
+    icon: '📱',
+    title: 'Mobile App Development',
+    description: 'Cross-platform mobile applications built with React Native and Expo for fast delivery and smooth user experience.',
+    features: [
+      'React Native apps',
+      'Expo development',
+      'API integration',
+      'Push notifications'
+    ]
+  },
+  {
+    icon: '☕',
+    title: 'Backend & API Development',
+    description: 'Robust backend systems designed for security, scalability, and long-term maintainability.',
+    features: [
+      'Java Spring Boot',
+      'Node.js services',
+      'JWT authentication',
+      'Microservices architecture'
+    ]
+  },
+  {
+    icon: '📊',
+    title: 'Data Engineering',
+    description: 'Data pipelines and processing workflows for collecting, transforming, and loading data efficiently.',
+    features: [
+      'ETL pipelines',
+      'Apache Spark processing',
+      'Apache Airflow workflows',
+      'Data modeling'
+    ]
+  },
+  {
+    icon: '☁️',
+    title: 'Cloud & DevOps',
+    description: 'Deployment, infrastructure setup, and cloud service integration for reliable production systems.',
+    features: [
+      'Docker deployment',
+      'AWS integration',
+      'CI/CD setup',
+      'Server configuration'
+    ]
   },
   {
     icon: '🔒',
     title: 'Security Applications',
-    description: 'Specialized tools for data security, encryption, and secure file handling.',
-    features: ['Steganography tools', 'File encryption', 'Polyglot file creation', 'Secure data transmission']
+    description: 'Specialized tools and secure application features for data protection and safe file handling.',
+    features: [
+      'File encryption',
+      'Secure authentication',
+      'Role-based access control',
+      'Secure data transmission'
+    ]
   },
   {
     icon: '⚡',
     title: 'Performance Optimization',
-    description: 'Speed up your application and improve user experience through strategic optimizations.',
-    features: ['Code optimization', 'Bundle size reduction', 'Caching strategies', 'Load time improvements']
+    description: 'Improve application speed, stability, and reliability through practical engineering optimizations.',
+    features: [
+      'Code optimization',
+      'Database query tuning',
+      'Caching strategies',
+      'Load time improvements'
+    ]
   },
   {
     icon: '🛠️',
     title: 'Consultation & Support',
-    description: 'Technical guidance and ongoing support for your development projects.',
-    features: ['Code review', 'Architecture planning', 'Technical mentoring', 'Troubleshooting']
+    description: 'Technical guidance and ongoing support for building, improving, and maintaining software projects.',
+    features: [
+      'Code review',
+      'Architecture planning',
+      'Technical mentoring',
+      'Troubleshooting'
+    ]
+  },
+  {
+    icon: '🤖',
+    title: 'AI Integration',
+    description: 'Integrating AI-powered features into existing products to improve automation and user productivity.',
+    features: [
+      'AI chatbot integration',
+      'Q&A automation',
+      'OpenAI API integration',
+      'RAG-based features'
+    ]
+  },
+  {
+    icon: '🗄️',
+    title: 'Database Design & Optimization',
+    description: 'Designing reliable database structures and improving query performance for scalable applications.',
+    features: [
+      'Schema design',
+      'Query optimization',
+      'Indexing strategy',
+      'Data migration'
+    ]
+  },
+  {
+    icon: '🔁',
+    title: 'Automation & Internal Tools',
+    description: 'Building automation tools and internal systems to reduce manual work and improve business operations.',
+    features: [
+      'Admin tools',
+      'Workflow automation',
+      'Report generation',
+      'Third-party integrations'
+    ]
   }
 ];
-
 
 
 const About: React.FC = () => {
@@ -761,11 +951,11 @@ const About: React.FC = () => {
   return (
     <>
       <SEO
-        title="About Rolan Lobo (Rolan RNR) - Full Stack Developer & Software Engineer"
-        description="Learn about Rolan Lobo (Rolan RNR), a passionate freelance software engineer from Karnataka, India. Specializing in security applications (steganography, file encryption, polyglot files), web development (React, Flask), and desktop applications. Journey through education, work experience, skills, and professional freelance services."
-        keywords="About Rolan Lobo, Rolan RNR, Rolan rnr, Software Engineer India, Full Stack Developer India, Freelance Developer India, Karnataka Developer, Freelance Web Developer, Security Software Developer, Steganography Developer, Polyglot Files Developer, React Developer India, Python Developer India"
-        image="https://rolan-rnr.netlify.app/about-rolan-lobo.webp"
-        url="https://rolan-rnr.netlify.app/about"
+        title="About Lai Minh Sang (YOO) - Full Stack Developer & Software Engineer"
+        description="Learn about Lai Minh Sang (YOO), a passionate freelance software engineer from Karnataka, India. Specializing in security applications (steganography, file encryption, polyglot files), web development (React, Flask), and desktop applications. Journey through education, work experience, skills, and professional freelance services."
+        keywords="About Lai Minh Sang, YOO, Lai Minh Sang, Software Engineer India, Full Stack Developer India, Freelance Developer India, Karnataka Developer, Freelance Web Developer, Security Software Developer, Steganography Developer, Polyglot Files Developer, React Developer India, Python Developer India"
+        image="https://yoonique.netlify.app/about-yoo.png"
+        url="https://yoonique.netlify.app/about"
       />
       {/* Hero Section */}
       <AboutHero>
@@ -779,7 +969,7 @@ const About: React.FC = () => {
               About Me
             </HeroTitle>
             <HeroSubtitle variants={itemVariants}>
-              I'm Rolan Lobo (RNR is my handle), an aspiring software engineer and freelancer from Karnataka, India.
+              I'm Lai Minh Sang, an aspiring software engineer and freelancer from Hanoi, Vietnam.
               I'm passionate about creating innovative, functional, and visually appealing digital solutions
               that solve real-world problems.
             </HeroSubtitle>
@@ -794,7 +984,7 @@ const About: React.FC = () => {
               <AboutImageContainer>
                 <AboutImage
                   src={aboutImage}
-                  alt="About Rolan Lobo (Rolan RNR)"
+                  alt="About Lai Minh Sang (YOO)"
                 />
               </AboutImageContainer>
             </AboutImageSection>

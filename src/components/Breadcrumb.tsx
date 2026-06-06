@@ -9,7 +9,7 @@ interface BreadcrumbItem {
 
 const Breadcrumb: React.FC = () => {
   const location = useLocation();
-  const baseUrl = 'https://rolan-rnr.netlify.app';
+  const baseUrl = 'https://yoonique.netlify.app';
 
   const getBreadcrumbItems = (): BreadcrumbItem[] => {
     const items: BreadcrumbItem[] = [

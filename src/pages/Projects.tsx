@@ -754,10 +754,10 @@ const projectsData: Project[] = [
   },
   {
     id: 7,
-    title: 'RNR Portfolio',
+    title: 'YOO Portfolio',
     category: 'Web Application',
     description: 'Modern developer portfolio website built with React and Framer Motion. Responsive web design showcasing projects, skills, and experience with smooth animations and SEO optimization.',
-    longDescription: 'RNR Portfolio is a professional full-stack developer portfolio website built with modern web technologies. This responsive, mobile-first portfolio showcases software projects, technical skills, and professional experience with stunning animations and optimized performance. Features include: React-based single-page application (SPA), smooth page transitions with Framer Motion, styled-components for modern CSS-in-JS styling, SEO-optimized with React Helmet, responsive design for all devices, fast loading times with code splitting, integrated contact form with Netlify Forms, dark theme design, and accessibility-focused UI. Perfect example of modern web development best practices including performance optimization, semantic HTML, and user experience design. Hosted on Netlify with continuous deployment. View source code to learn React, TypeScript, and modern frontend development patterns.',
+    longDescription: 'YOO Portfolio is a professional full-stack developer portfolio website built with modern web technologies. This responsive, mobile-first portfolio showcases software projects, technical skills, and professional experience with stunning animations and optimized performance. Features include: React-based single-page application (SPA), smooth page transitions with Framer Motion, styled-components for modern CSS-in-JS styling, SEO-optimized with React Helmet, responsive design for all devices, fast loading times with code splitting, integrated contact form with Netlify Forms, dark theme design, and accessibility-focused UI. Perfect example of modern web development best practices including performance optimization, semantic HTML, and user experience design. Hosted on Netlify with continuous deployment. View source code to learn React, TypeScript, and modern frontend development patterns.',
     caseStudy: {
       problem: 'Generic portfolio templates look identical and fail to communicate a developer\'s actual personality or technical depth. Recruiters spend under 10 seconds on a portfolio before deciding.',
       solution: 'Designed and built a custom React + TypeScript portfolio from scratch with Framer Motion page transitions, an accessibility-first component hierarchy, SEO-optimised metadata, and performance budgets enforced via Vite build analysis.',
@@ -765,7 +765,7 @@ const projectsData: Project[] = [
       learnings: 'Animation and accessibility are often in tension — learned to respect prefers-reduced-motion from day one. Also discovered that CSS-in-JS (styled-components) adds non-trivial runtime overhead; would evaluate Tailwind + CSS Modules next time.'
     },
     technologies: ['React', 'TypeScript', 'Styled-Components', 'Framer Motion', 'SEO', 'Netlify'],
-    github: 'https://github.com/Mrtracker-new/RNR',
+    github: 'https://github.com/Mrtracker-new/YOO',
     featured: false,
     icon: '💼',
     bgColor: '#000000'
@@ -1030,10 +1030,10 @@ const Projects: React.FC = () => {
   return (
     <>
       <SEO
-        title="Projects - Rolan Lobo (Rolan RNR) | Steganography, Security Tools & Web Apps"
+        title="Projects - Rolan Lobo (Rolan YOO) | Steganography, Security Tools & Web Apps"
         description="Explore my portfolio of innovative software projects: InvisioVault (steganography & polyglot files), YT-Downloader (free YouTube video & audio downloader), BAR (secure file management), Sortify, and more full-stack web/desktop applications."
-        keywords="Steganography, Polyglot Files, Hide Files in Images, YouTube Downloader, Video Downloader, YouTube to MP3, File Encryption, Security Tools, InvisioVault, BAR, Sortify, React Projects, Python Projects, Flask, Full Stack Developer, Rolan Lobo, Rolan RNR"
-        url="https://rolan-rnr.netlify.app/projects"
+        keywords="Steganography, Polyglot Files, Hide Files in Images, YouTube Downloader, Video Downloader, YouTube to MP3, File Encryption, Security Tools, InvisioVault, BAR, Sortify, React Projects, Python Projects, Flask, Full Stack Developer, Rolan Lobo, Rolan YOO"
+        url="https://yoonique.netlify.app/projects"
       />
       <ProjectsHero>
         <Container>

@@ -136,7 +136,7 @@ const Blog: React.FC = () => {
                 title="Blog — Rolan Lobo | Dev.to Articles on Web Dev & Security"
                 description="Technical articles by Rolan Lobo published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering."
                 keywords="Rolan Lobo blog, Dev.to articles, web development tutorials, React tutorials, Python programming, security tools, software engineering blog"
-                url="https://rolan-rnr.netlify.app/blog"
+                url="https://yoonique.netlify.app/blog"
                 type="website"
             />
 
@@ -149,13 +149,13 @@ const Blog: React.FC = () => {
                         name: 'Blog — Rolan Lobo | Dev.to Articles on Web Dev & Security',
                         description:
                             'Technical articles by Rolan Lobo published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering.',
-                        url: 'https://rolan-rnr.netlify.app/blog',
+                        url: 'https://yoonique.netlify.app/blog',
                         inLanguage: 'en-US',
                         author: {
                             '@type': 'Person',
                             name: 'Rolan Lobo',
-                            alternateName: 'Rolan RNR',
-                            url: 'https://rolan-rnr.netlify.app/',
+                            alternateName: 'Rolan YOO',
+                            url: 'https://yoonique.netlify.app/',
                             sameAs: [
                                 'https://dev.to/rolan_r_n_r',
                                 'https://github.com/Mrtracker-new',
@@ -165,8 +165,8 @@ const Blog: React.FC = () => {
                         publisher: {
                             '@type': 'Person',
                             name: 'Rolan Lobo',
-                            alternateName: 'Rolan RNR',
-                            url: 'https://rolan-rnr.netlify.app/'
+                            alternateName: 'Rolan YOO',
+                            url: 'https://yoonique.netlify.app/'
                         },
                         about: [
                             { '@type': 'Thing', name: 'Web Development' },
@@ -179,8 +179,8 @@ const Blog: React.FC = () => {
                         ],
                         isPartOf: {
                             '@type': 'WebSite',
-                            name: 'Rolan Lobo (Rolan RNR) Portfolio',
-                            url: 'https://rolan-rnr.netlify.app/'
+                            name: 'Rolan Lobo (Rolan YOO) Portfolio',
+                            url: 'https://yoonique.netlify.app/'
                         }
                     })}
                 </script>

@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🚀 RNR — My Digital Playground
+# 🚀 YOO — My Digital Playground
 
 **Where code meets creativity (and way too much caffeine) ☕**
 
-[![Live Demo](https://img.shields.io/badge/🚀_Launch-Live_Site-FF2D20?style=for-the-badge&logo=rocket&logoColor=white)](https://rolan-rnr.netlify.app/)
-[![GitHub Repo](https://img.shields.io/badge/📦_Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mrtracker-new/RNR)
+[![Live Demo](https://img.shields.io/badge/🚀_Launch-Live_Site-FF2D20?style=for-the-badge&logo=rocket&logoColor=white)](https://yoonique.netlify.app/)
+[![GitHub Repo](https://img.shields.io/badge/📦_Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mrtracker-new/YOO)
 
 <br />
 
@@ -102,10 +102,10 @@ Want to poke around? Let's go.
 
 ```bash
 # 1. Steal the code (legally)
-git clone https://github.com/Mrtracker-new/RNR.git
+git clone https://github.com/Mrtracker-new/YOO.git
 
 # 2. Step inside
-cd RNR
+cd YOO
 
 # 3. Feed the node_modules monster
 npm install
@@ -137,7 +137,7 @@ The blog page reads your Dev.to username from `VITE_DEVTO_USERNAME`. No API key 
 
 ## 📬 Find Me
 
-- 🌍 **Portfolio**: [rolan-rnr.netlify.app](https://rolan-rnr.netlify.app/)
+- 🌍 **Portfolio**: [rolan-rnr.netlify.app](https://yoonique.netlify.app/)
 - 📦 **GitHub**: [@Mrtracker-new](https://github.com/Mrtracker-new)
 - 📧 **Email**: [rolanlobo901@gmail.com](mailto:rolanlobo901@gmail.com)
 - 📝 **Blog**: [Dev.to](https://dev.to/rolan_r_n_r)

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rolan-rnr.netlify.app/sitemap.xml
+Sitemap: https://yoonique.netlify.app/sitemap.xml
 
 # Crawl delay (optional - helps prevent overloading your server)
 Crawl-delay: 1

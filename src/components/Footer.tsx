@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
   return (
     <FooterWrapper>
       <Inner>
-        <Brand>© {year} <span>Rolan Lobo</span></Brand>
+        <Brand>© {year} <span> Lại Minh Sáng. </span>All rights reserved.</Brand>
         <Nav aria-label="Footer navigation">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
