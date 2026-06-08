@@ -113,6 +113,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Anti-Copy Protection */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
   }
 
   *,
@@ -246,6 +252,8 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: var(--radius-md);
     padding: var(--spacing-3) var(--spacing-4);
     transition: var(--transition-normal);
+    user-select: auto;
+    -webkit-user-select: auto;
   }
 
   input:focus, textarea:focus {

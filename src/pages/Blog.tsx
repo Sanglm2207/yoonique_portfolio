@@ -133,9 +133,9 @@ const Blog: React.FC = () => {
     return (
         <>
             <SEO
-                title="Blog — Rolan Lobo | Dev.to Articles on Web Dev & Security"
-                description="Technical articles by Rolan Lobo published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering."
-                keywords="Rolan Lobo blog, Dev.to articles, web development tutorials, React tutorials, Python programming, security tools, software engineering blog"
+                title="Blog — Lại Minh Sáng | Dev.to Articles on Web Dev & Security"
+                description="Technical articles by Lại Minh Sáng published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering."
+                keywords="Lại Minh Sáng blog, Dev.to articles, web development tutorials, React tutorials, Python programming, security tools, software engineering blog"
                 url="https://yoonique.netlify.app/blog"
                 type="website"
             />
@@ -146,26 +146,26 @@ const Blog: React.FC = () => {
                     {JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'CollectionPage',
-                        name: 'Blog — Rolan Lobo | Dev.to Articles on Web Dev & Security',
+                        name: 'Blog — Lại Minh Sáng | Dev.to Articles on Web Dev & Security',
                         description:
-                            'Technical articles by Rolan Lobo published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering.',
+                            'Technical articles by Lại Minh Sáng published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering.',
                         url: 'https://yoonique.netlify.app/blog',
                         inLanguage: 'en-US',
                         author: {
                             '@type': 'Person',
-                            name: 'Rolan Lobo',
-                            alternateName: 'Rolan YOO',
+                            name: 'Lại Minh Sáng',
+                            alternateName: 'Lại Minh Sáng YOO',
                             url: 'https://yoonique.netlify.app/',
                             sameAs: [
-                                'https://dev.to/rolan_r_n_r',
+                                'https://dev.to/Lại Minh Sáng_r_n_r',
                                 'https://github.com/Mrtracker-new',
-                                'https://www.linkedin.com/in/rolan-lobo/'
+                                'https://www.linkedin.com/in/Lại Minh Sáng-lobo/'
                             ]
                         },
                         publisher: {
                             '@type': 'Person',
-                            name: 'Rolan Lobo',
-                            alternateName: 'Rolan YOO',
+                            name: 'Lại Minh Sáng',
+                            alternateName: 'Lại Minh Sáng YOO',
                             url: 'https://yoonique.netlify.app/'
                         },
                         about: [
@@ -179,7 +179,7 @@ const Blog: React.FC = () => {
                         ],
                         isPartOf: {
                             '@type': 'WebSite',
-                            name: 'Rolan Lobo (Rolan YOO) Portfolio',
+                            name: 'Lại Minh Sáng (Lại Minh Sáng YOO) Portfolio',
                             url: 'https://yoonique.netlify.app/'
                         }
                     })}
@@ -214,7 +214,7 @@ const Blog: React.FC = () => {
                             <h2>⚠️ Oops! Something went wrong</h2>
                             <p>We couldn't load the blog posts. Please try again later.</p>
                             <a
-                                href="https://dev.to/rolan_r_n_r"
+                                href="https://dev.to/Lại Minh Sáng_r_n_r"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -230,7 +230,7 @@ const Blog: React.FC = () => {
                             <h2>📝 No posts yet</h2>
                             <p>I haven't published any blog posts yet. Check back soon!</p>
                             <a
-                                href="https://dev.to/rolan_r_n_r"
+                                href="https://dev.to/Lại Minh Sáng_r_n_r"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

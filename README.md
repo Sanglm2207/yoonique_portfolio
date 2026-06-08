@@ -137,10 +137,10 @@ The blog page reads your Dev.to username from `VITE_DEVTO_USERNAME`. No API key 
 
 ## 📬 Find Me
 
-- 🌍 **Portfolio**: [rolan-rnr.netlify.app](https://yoonique.netlify.app/)
+- 🌍 **Portfolio**: [Lại Minh Sáng-rnr.netlify.app](https://yoonique.netlify.app/)
 - 📦 **GitHub**: [@Mrtracker-new](https://github.com/Mrtracker-new)
-- 📧 **Email**: [rolanlobo901@gmail.com](mailto:rolanlobo901@gmail.com)
-- 📝 **Blog**: [Dev.to](https://dev.to/rolan_r_n_r)
+- 📧 **Email**: [Lại Minh Sánglobo901@gmail.com](mailto:Lại Minh Sánglobo901@gmail.com)
+- 📝 **Blog**: [Dev.to](https://dev.to/Lại Minh Sáng_r_n_r)
 - 📍 **Location**: India 🇮🇳
 
 ---
@@ -149,6 +149,6 @@ The blog page reads your Dev.to username from `VITE_DEVTO_USERNAME`. No API key 
 
 **If you made it this far, you're awesome. ⭐ Star the repo if you liked it!**
 
-*Made with ❤️, ☕, and an unhealthy number of `console.log`s — by Rolan*
+*Made with ❤️, ☕, and an unhealthy number of `console.log`s — by Lại Minh Sáng*
 
 </div>

@@ -9,6 +9,7 @@ import { FullScreenLoading } from './components/LoadingSpinner';
 import ScrollToTop from './components/ScrollToTop';
 import Breadcrumb from './components/Breadcrumb';
 import { useViewTransition } from './hooks/useViewTransition';
+import { useSecurity } from './hooks/useSecurity';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const SkipLink = styled.a`
@@ -138,6 +139,7 @@ function AppRoutes() {
 }
 
 function App() {
+  useSecurity();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

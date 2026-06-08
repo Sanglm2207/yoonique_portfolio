@@ -278,7 +278,7 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              © {new Date().getFullYear()} Rolan Lobo
+              © {new Date().getFullYear()} Lại Minh Sáng
             </motion.div>
           </MobileMenu>
         )}

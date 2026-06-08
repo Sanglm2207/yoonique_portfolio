@@ -60,7 +60,7 @@ const HomeLink = styled(motion(Link))`
 const NotFound: React.FC = () => (
   <>
     <SEO
-      title="404 — Page Not Found | Rolan Lobo"
+      title="404 — Page Not Found | Lại Minh Sáng"
       description="The page you're looking for doesn't exist."
     />
     <Wrapper>

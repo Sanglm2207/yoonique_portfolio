@@ -30,7 +30,7 @@ const SEO: React.FC<SEOProps> = ({
 
   const siteName = 'Lai Minh Sang (Yoo) Portfolio';
   const twitterHandle = '@kaidev99';
-``
+  ``
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -66,7 +66,7 @@ const SEO: React.FC<SEOProps> = ({
         <meta property="article:modified_time" content={modifiedAt} />
       )}
       {type === 'article' && (
-        <meta property="article:author" content="https://dev.to/rolan_r_n_r" />
+        <meta property="article:author" content="https://dev.to/Lại Minh Sáng_r_n_r" />
       )}
       {tags?.map(tag => (
         <meta key={tag} property="article:tag" content={tag} />
@@ -76,8 +76,8 @@ const SEO: React.FC<SEOProps> = ({
       <link
         rel="alternate"
         type="application/rss+xml"
-        title="Rolan Lobo's Blog on Dev.to"
-        href="https://dev.to/feed/rolan_r_n_r"
+        title="Lại Minh Sáng's Blog on Dev.to"
+        href="https://dev.to/feed/Lại Minh Sáng_r_n_r"
       />
 
       {/* Additional Meta Tags */}

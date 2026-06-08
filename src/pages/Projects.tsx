@@ -178,7 +178,6 @@ const FilterButton = styled(motion.button) <{ $active: boolean }>`
     background: rgba(30, 41, 59, 0.3);
     color: var(--dark-300);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
     
     &:hover {
       border-color: var(--accent-primary);
@@ -205,8 +204,6 @@ const ProjectCard = styled(motion.div)`
   flex-direction: column;
   height: 100%;
   background: rgba(30, 41, 59, 0.3);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-2xl);
   overflow: hidden;
@@ -405,14 +402,13 @@ const ModalContent = styled(motion.div)`
   position: relative;
   overflow: hidden;
   /*
-   * backface-visibility: hidden + will-change: transform create a GPU
+   * backface-visibility: hidden create a GPU
    * compositing boundary scoped to just this card. Framer Motion safely
    * overrides the transform property with its animated value, so there
    * is no conflict. DO NOT set transform here — Framer Motion owns it.
    */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  will-change: transform;
   box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(100, 255, 218, 0.1),
@@ -822,9 +818,9 @@ interface ProjectModalProps {
 }
 
 const caseStudySections = [
-  { key: 'problem',   label: 'Problem',   icon: '🎯', color: '#f87171' },
-  { key: 'solution',  label: 'Solution',  icon: '💡', color: '#60a5fa' },
-  { key: 'impact',    label: 'Impact',    icon: '📈', color: '#34d399' },
+  { key: 'problem', label: 'Problem', icon: '🎯', color: '#f87171' },
+  { key: 'solution', label: 'Solution', icon: '💡', color: '#60a5fa' },
+  { key: 'impact', label: 'Impact', icon: '📈', color: '#34d399' },
   { key: 'learnings', label: 'Learnings', icon: '🧠', color: '#a78bfa' },
 ] as const;
 
@@ -854,162 +850,162 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
   return (
     <AnimatePresence>
       {isOpen && project && (
-      <ModalOverlay
-        key="modal-overlay"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.18, ease: 'easeOut' }}
-        onClick={onClose}
-      >
-        <ModalContent
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 12 }}
-          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-          onClick={(e) => e.stopPropagation()}
-          role="dialog"
-          aria-modal="true"
-          aria-label={project.title}
+        <ModalOverlay
+          key="modal-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.18, ease: 'easeOut' }}
+          onClick={onClose}
         >
-          <CloseButton onClick={onClose} aria-label="Close">×</CloseButton>
+          <ModalContent
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={project.title}
+          >
+            <CloseButton onClick={onClose} aria-label="Close">×</CloseButton>
 
-          <ModalScroller>
-          {project.image && (
-            <ModalImageBanner>
-              {/*
+            <ModalScroller>
+              {project.image && (
+                <ModalImageBanner>
+                  {/*
                * loading="eager" — the image is fetched immediately when the
                * modal opens; lazy loading would defer the network request until
                * the element enters the viewport, which is what caused the flash.
                * decoding="async" lets the browser decode off the main thread so
                * the modal animation stays smooth.
                */}
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="eager"
-                decoding="async"
-              />
-            </ModalImageBanner>
-          )}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </ModalImageBanner>
+              )}
 
-          {/* All content below the banner */}
-          <ModalBody>
-            {/* Header */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-4)', marginBottom: 'var(--spacing-5)' }}>
-              <div style={{
-                fontSize: 'var(--text-2xl)',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                padding: 'var(--spacing-3)',
-                borderRadius: 'var(--radius-xl)',
-                minWidth: '56px',
-                height: '56px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                {project.icon}
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <ModalTitle>{project.title}</ModalTitle>
-                <div style={{ display: 'flex', gap: 'var(--spacing-2)', flexWrap: 'wrap', alignItems: 'center', marginTop: 'var(--spacing-1)' }}>
-                  <Badge variant="info">{project.category}</Badge>
-                  {project.featured && <Badge variant="success">⭐ Featured</Badge>}
+              {/* All content below the banner */}
+              <ModalBody>
+                {/* Header */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-4)', marginBottom: 'var(--spacing-5)' }}>
+                  <div style={{
+                    fontSize: 'var(--text-2xl)',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    padding: 'var(--spacing-3)',
+                    borderRadius: 'var(--radius-xl)',
+                    minWidth: '56px',
+                    height: '56px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    {project.icon}
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <ModalTitle>{project.title}</ModalTitle>
+                    <div style={{ display: 'flex', gap: 'var(--spacing-2)', flexWrap: 'wrap', alignItems: 'center', marginTop: 'var(--spacing-1)' }}>
+                      <Badge variant="info">{project.category}</Badge>
+                      {project.featured && <Badge variant="success">⭐ Featured</Badge>}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Short description */}
-            <ModalDescription>{project.description}</ModalDescription>
+                {/* Short description */}
+                <ModalDescription>{project.description}</ModalDescription>
 
-            <SectionDivider />
+                <SectionDivider />
 
-            {/* Case study sections */}
-            <div style={{ marginBottom: 'var(--spacing-6)' }}>
-              <h4 style={{
-                color: 'var(--dark-100)',
-                fontSize: '0.7rem',
-                fontWeight: 'var(--font-bold)',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                marginBottom: 'var(--spacing-4)',
-                opacity: 0.6
-              }}>Case Study</h4>
+                {/* Case study sections */}
+                <div style={{ marginBottom: 'var(--spacing-6)' }}>
+                  <h4 style={{
+                    color: 'var(--dark-100)',
+                    fontSize: '0.7rem',
+                    fontWeight: 'var(--font-bold)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    marginBottom: 'var(--spacing-4)',
+                    opacity: 0.6
+                  }}>Case Study</h4>
 
-              <CaseStudyGrid>
-                {caseStudySections.map(({ key, label, icon, color }) => (
-                  <CaseStudyCard key={key} $accentColor={color}>
-                    <CaseStudyLabel $color={color}>
-                      <span className="icon">{icon}</span>
-                      {label}
-                    </CaseStudyLabel>
-                    <CaseStudyText>{project.caseStudy[key]}</CaseStudyText>
-                  </CaseStudyCard>
-                ))}
-              </CaseStudyGrid>
-            </div>
+                  <CaseStudyGrid>
+                    {caseStudySections.map(({ key, label, icon, color }) => (
+                      <CaseStudyCard key={key} $accentColor={color}>
+                        <CaseStudyLabel $color={color}>
+                          <span className="icon">{icon}</span>
+                          {label}
+                        </CaseStudyLabel>
+                        <CaseStudyText>{project.caseStudy[key]}</CaseStudyText>
+                      </CaseStudyCard>
+                    ))}
+                  </CaseStudyGrid>
+                </div>
 
-            <SectionDivider />
+                <SectionDivider />
 
-            {/* Tech stack */}
-            <div style={{ marginBottom: 'var(--spacing-6)' }}>
-              <h4 style={{
-                color: 'var(--dark-100)',
-                fontSize: '0.7rem',
-                fontWeight: 'var(--font-bold)',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                marginBottom: 'var(--spacing-3)',
-                opacity: 0.6
-              }}>Tech Stack</h4>
-              <ModalTech>
-                {project.technologies.map((tech: string) => (
-                  <TechTag key={tech}>{tech}</TechTag>
-                ))}
-              </ModalTech>
-            </div>
+                {/* Tech stack */}
+                <div style={{ marginBottom: 'var(--spacing-6)' }}>
+                  <h4 style={{
+                    color: 'var(--dark-100)',
+                    fontSize: '0.7rem',
+                    fontWeight: 'var(--font-bold)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    marginBottom: 'var(--spacing-3)',
+                    opacity: 0.6
+                  }}>Tech Stack</h4>
+                  <ModalTech>
+                    {project.technologies.map((tech: string) => (
+                      <TechTag key={tech}>{tech}</TechTag>
+                    ))}
+                  </ModalTech>
+                </div>
 
-            {/* Actions */}
-            <ModalActions>
+                {/* Actions */}
+                <ModalActions>
 
-            <ActionButton
-              as="a"
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-            >
-              📂 View Code
-            </ActionButton>
-            {project.liveDemo && (
-              <ActionButton
-                as="a"
-                href={project.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="secondary"
-              >
-                🚀 Live Demo
-              </ActionButton>
-            )}
-            {project.download && (
-              <ActionButton
-                as="a"
-                href={project.download}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-              >
-                💾 Download
-              </ActionButton>
-            )}
-          </ModalActions>
-          </ModalBody>
-          </ModalScroller>
-        </ModalContent>
-      </ModalOverlay>
+                  <ActionButton
+                    as="a"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="primary"
+                  >
+                    📂 View Code
+                  </ActionButton>
+                  {project.liveDemo && (
+                    <ActionButton
+                      as="a"
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="secondary"
+                    >
+                      🚀 Live Demo
+                    </ActionButton>
+                  )}
+                  {project.download && (
+                    <ActionButton
+                      as="a"
+                      href={project.download}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="outline"
+                    >
+                      💾 Download
+                    </ActionButton>
+                  )}
+                </ModalActions>
+              </ModalBody>
+            </ModalScroller>
+          </ModalContent>
+        </ModalOverlay>
       )}
     </AnimatePresence>
   );
@@ -1030,9 +1026,9 @@ const Projects: React.FC = () => {
   return (
     <>
       <SEO
-        title="Projects - Rolan Lobo (Rolan YOO) | Steganography, Security Tools & Web Apps"
+        title="Projects - Lại Minh Sáng (Lại Minh Sáng YOO) | Steganography, Security Tools & Web Apps"
         description="Explore my portfolio of innovative software projects: InvisioVault (steganography & polyglot files), YT-Downloader (free YouTube video & audio downloader), BAR (secure file management), Sortify, and more full-stack web/desktop applications."
-        keywords="Steganography, Polyglot Files, Hide Files in Images, YouTube Downloader, Video Downloader, YouTube to MP3, File Encryption, Security Tools, InvisioVault, BAR, Sortify, React Projects, Python Projects, Flask, Full Stack Developer, Rolan Lobo, Rolan YOO"
+        keywords="Steganography, Polyglot Files, Hide Files in Images, YouTube Downloader, Video Downloader, YouTube to MP3, File Encryption, Security Tools, InvisioVault, BAR, Sortify, React Projects, Python Projects, Flask, Full Stack Developer, Lại Minh Sáng, Lại Minh Sáng YOO"
         url="https://yoonique.netlify.app/projects"
       />
       <ProjectsHero>

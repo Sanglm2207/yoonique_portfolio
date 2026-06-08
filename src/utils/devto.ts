@@ -43,7 +43,7 @@ function mapDevtoPost(raw: Record<string, unknown>): BlogPost {
         publishedAt: (raw.published_at as string) || new Date().toISOString(),
         ...(raw.cover_image ? { coverImage: { url: raw.cover_image as string } } : {}),
         author: {
-            name: (raw.user as Record<string, string>)?.name || 'Rolan Lobo',
+            name: (raw.user as Record<string, string>)?.name || 'Lại Minh Sáng',
             profilePicture: (raw.user as Record<string, string>)?.profile_image || undefined,
         },
         tags,
