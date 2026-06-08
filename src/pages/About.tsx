@@ -1,6 +1,6 @@
 import React, { useRef, lazy, Suspense } from 'react';
 import { motion, useScroll, useSpring, Variants } from 'framer-motion';
-import { Container, Section } from '../styles/GlobalStyle';
+import { Container } from '../styles/GlobalStyle';
 import SEO from '../components/SEO';
 
 import aboutImage from '../assets/images/Aboutme.png';
