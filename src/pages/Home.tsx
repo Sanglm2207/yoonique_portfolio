@@ -29,15 +29,8 @@ import {
 
 import { getLatestPosts, BlogPost } from '../utils/devto';
 
-// Profile images served from /public — not imported via webpack so they are
-// never bundled into the JS chunk. The browser fetches only the size it needs
-// via the srcSet attribute at render time.
+// Profile image served from /public so it can be used directly without additional scaling.
 const profileImage = '/images/Home_dp.jpg';
-const profileImage900 = '/images/Home_dp_900.jpg';
-const profileImage600 = '/images/Home_dp_600.jpg';
-const profileImage450 = '/images/Home_dp_450.jpg';
-const profileImage300 = '/images/Home_dp_300.jpg';
-const profileImage150 = '/images/Home_dp_150.jpg';
 
 // Lazy load components to reduce initial bundle size
 const BlogCard = lazy(() => import('../components/BlogCard'));
@@ -168,9 +161,7 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <img
-                    src={profileImage450}
-                    srcSet={`${profileImage150} 150w, ${profileImage300} 300w, ${profileImage450} 450w, ${profileImage600} 600w, ${profileImage900} 900w, ${profileImage} 1673w`}
-                    sizes="(max-width: 968px) 280px, 450px"
+                    src={profileImage}
                     alt="Lại Minh Sáng (YOO) - Full Stack Developer"
                   />
                 </StylizedImage>
