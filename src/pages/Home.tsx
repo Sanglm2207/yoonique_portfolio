@@ -27,7 +27,7 @@ import {
   ViewAllButton,
 } from '../styles/HomeStyles';
 
-import { getLatestPosts, BlogPost } from '../utils/devto';
+import { getLatestPosts, BlogPost } from '../utils/blog';
 
 // Profile image served from /public so it can be used directly without additional scaling.
 const profileImage = '/images/Home_dp.jpg';

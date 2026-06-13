@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { scrollOptimizer } from '../utils/performance';
 
 // Fixed container ensuring it stays on top
-const FixedContainer = styled.div`
+const FixedContainer = styled.div<{ $vertical: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -15,14 +15,29 @@ const FixedContainer = styled.div`
   pointer-events: none; /* Let clicks pass through the padding area */
   display: flex;
   justify-content: center;
+  transition: left 0.4s ease, right 0.4s ease, justify-content 0.4s ease, padding 0.4s ease, transform 0.4s ease;
+
+  ${props => props.$vertical && `
+    top: 50%;
+    left: var(--spacing-4);
+    right: auto;
+    transform: translateY(-50%);
+    justify-content: flex-start;
+    padding: 0;
+  `}
 
   @media (max-width: 768px) {
     padding: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: none;
+    justify-content: center;
   }
 `;
 
 // The actual "Island" navbar
-const NavbarIsland = styled(motion.nav) <{ $scrolled: boolean }>`
+const NavbarIsland = styled(motion.nav) <{ $scrolled: boolean; $vertical: boolean }>`
   pointer-events: auto; /* Re-enable clicks */
   width: 100%;
   max-width: var(--breakpoint-lg);
@@ -40,10 +55,15 @@ const NavbarIsland = styled(motion.nav) <{ $scrolled: boolean }>`
 
   /* Desktop: Floating Island */
   @media (min-width: 769px) {
-    margin-top: ${props => props.$scrolled ? 'var(--spacing-2)' : 'var(--spacing-4)'};
+    margin-top: ${props => props.$vertical ? '0' : (props.$scrolled ? 'var(--spacing-2)' : 'var(--spacing-4)')};
     background: ${props => props.$scrolled ? 'rgba(9, 9, 11, 0.8)' : 'rgba(9, 9, 11, 0.5)'};
-    width: ${props => props.$scrolled ? 'auto' : '100%'}; /* Shrink on scroll? maybe just stay wide */
-    min-width: 600px;
+    width: ${props => props.$vertical ? 'auto' : (props.$scrolled ? 'auto' : '100%')};
+    min-width: ${props => props.$vertical ? '56px' : '600px'};
+    flex-direction: ${props => props.$vertical ? 'column' : 'row'};
+    align-items: ${props => props.$vertical ? 'center' : 'center'};
+    justify-content: ${props => props.$vertical ? 'center' : 'space-between'};
+    padding: ${props => props.$vertical ? 'var(--spacing-3)' : 'var(--spacing-3) var(--spacing-6)'};
+    border-radius: ${props => props.$vertical ? 'var(--radius-3xl)' : 'var(--radius-2xl)'};
   }
 
   /* Mobile: Full width top bar */
@@ -78,7 +98,7 @@ const Logo = styled(Link)`
   }
 `;
 
-const NavLinks = styled.div`
+const NavLinks = styled.div<{ $vertical: boolean }>`
   display: flex;
   gap: var(--spacing-1);
   position: relative;
@@ -86,28 +106,81 @@ const NavLinks = styled.div`
   padding: 4px;
   border-radius: var(--radius-lg); // Changed from radius-full
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+
+  @media (min-width: 769px) {
+    flex-direction: ${props => props.$vertical ? 'column' : 'row'};
+    align-items: center;
+    width: ${props => props.$vertical ? 'auto' : 'auto'};
+    gap: ${props => props.$vertical ? 'var(--spacing-2)' : 'var(--spacing-1)'};
+  }
 
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-const NavItem = styled(Link) <{ $active: boolean }>`
+const NavIcon = styled.span<{ $vertical: boolean }>`
+  display: ${props => props.$vertical ? 'inline-flex' : 'none'};
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+`;
+
+const NavLabel = styled.span<{ $vertical: boolean }>`
+  display: ${props => props.$vertical ? 'none' : 'inline-flex'};
+  align-items: center;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, width 0.25s ease, margin 0.25s ease, transform 0.25s ease;
+`;
+
+const NavTooltip = styled.span`
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%) translateX(4px);
+  padding: 8px 12px;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 9, 13, 0.95);
+  color: var(--dark-100);
+  font-size: 0.92rem;
+  white-space: nowrap;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+  pointer-events: none;
+  z-index: 2;
+`;
+
+const NavItem = styled(Link) <{ $active: boolean; $vertical: boolean }>`
   position: relative;
-  padding: 8px 16px;
+  padding: ${props => props.$vertical ? '8px' : '8px 8px'};
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: ${props => props.$active ? 'var(--accent-primary)' : 'var(--dark-400)'};
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
   z-index: 1;
   border-radius: var(--radius-md);
   display: flex; // Ensure block model
   align-items: center;
   justify-content: center;
+  width: auto;
+  min-width: auto;
+  overflow: visible;
 
   &:hover {
     color: var(--dark-100);
+    background: rgba(255, 255, 255, 0.06);
+
+    ${NavTooltip} {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(8px);
+    }
   }
 `;
 
@@ -166,27 +239,44 @@ const MobileLink = styled(Link)`
 `;
 
 const navItems = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/projects', label: 'Projects' },
-  // { path: '/blog', label: 'Blog' },
-  { path: '/contact', label: 'Contact' }
+  { path: '/', label: 'Home', icon: '🏠' },
+  { path: '/about', label: 'About', icon: '👤' },
+  { path: '/projects', label: 'Projects', icon: '💼' },
+  { path: '/blog', label: 'Blog', icon: '📝' },
+  { path: '/contact', label: 'Contact', icon: '📧' }
 ];
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [vertical, setVertical] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScrollUpdate = ({ scrollY }: { scrollY: number }) => {
+    const isBlogDetail = location.pathname.startsWith('/blog/') && location.pathname !== '/blog';
+
+    const handleScrollUpdate = ({ scrollY, direction }: { scrollY: number; direction: 'up' | 'down'; isScrolling: boolean }) => {
       setScrolled(scrollY > 20);
+
+      if (!isBlogDetail) {
+        setVertical(false);
+        return;
+      }
+
+      if (direction === 'down' && scrollY > 80) {
+        setVertical(true);
+      }
+
+      if (direction === 'up' || scrollY < 60) {
+        setVertical(false);
+      }
     };
+
     const unsubscribe = scrollOptimizer.subscribe(handleScrollUpdate);
     return () => {
       if (unsubscribe) unsubscribe();
     };
-  }, []);
+  }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -199,9 +289,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <FixedContainer>
+      <FixedContainer $vertical={vertical}>
         <NavbarIsland
           $scrolled={scrolled}
+          $vertical={vertical}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -210,7 +301,7 @@ const Navbar: React.FC = () => {
             <span>YOO</span>
           </Logo>
 
-          <NavLinks>
+          <NavLinks $vertical={vertical}>
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -218,8 +309,11 @@ const Navbar: React.FC = () => {
                   <NavItem
                     to={item.path}
                     $active={isActive}
+                    $vertical={vertical}
                   >
-                    {item.label}
+                    <NavIcon $vertical={vertical}>{item.icon}</NavIcon>
+                    <NavLabel $vertical={vertical}>{item.label}</NavLabel>
+                    {vertical && <NavTooltip>{item.label}</NavTooltip>}
                     {isActive && (
                       <ActivePill
                         layoutId="nav-pill"

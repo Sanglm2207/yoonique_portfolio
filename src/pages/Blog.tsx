@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { Container } from '../styles/GlobalStyle';
 import SEO from '../components/SEO';
 
-import { getAllPosts, BlogPost } from '../utils/devto';
+import { getAllPosts, BlogPost } from '../utils/blog';
 import { FullScreenLoading } from '../components/LoadingSpinner';
 
 // Lazy load BlogCard to reduce initial bundle size
@@ -133,34 +133,27 @@ const Blog: React.FC = () => {
     return (
         <>
             <SEO
-                title="Blog — Lại Minh Sáng | Dev.to Articles on Web Dev & Security"
-                description="Technical articles by Lại Minh Sáng published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering."
-                keywords="Lại Minh Sáng blog, Dev.to articles, web development tutorials, React tutorials, Python programming, security tools, software engineering blog"
+                title="Blog — Lại Minh Sáng | GitHub README Blog"
+                description="Blog content fetched from a GitHub repository README and served through a Netlify function backed by MongoDB."
+                keywords="Lại Minh Sáng blog, GitHub README blog, frontend developer blog, portfolio blog"
                 url="https://yoonique.netlify.app/blog"
                 type="website"
             />
 
-            {/* CollectionPage JSON-LD — tells Google this page aggregates Dev.to articles */}
             <Helmet>
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'CollectionPage',
-                        name: 'Blog — Lại Minh Sáng | Dev.to Articles on Web Dev & Security',
-                        description:
-                            'Technical articles by Lại Minh Sáng published on Dev.to. Topics include full-stack web development, Python, React, TypeScript, security tools, steganography, and software engineering.',
+                        name: 'Blog — Lại Minh Sáng | GitHub README Blog',
+                        description: 'Blog content fetched from a GitHub README and served through a Netlify function backed by MongoDB.',
                         url: 'https://yoonique.netlify.app/blog',
                         inLanguage: 'en-US',
                         author: {
                             '@type': 'Person',
                             name: 'Lại Minh Sáng',
                             alternateName: 'Lại Minh Sáng YOO',
-                            url: 'https://yoonique.netlify.app/',
-                            sameAs: [
-                                'https://dev.to/Lại Minh Sáng_r_n_r',
-                                'https://github.com/Mrtracker-new',
-                                'https://www.linkedin.com/in/Lại Minh Sáng-lobo/'
-                            ]
+                            url: 'https://yoonique.netlify.app/'
                         },
                         publisher: {
                             '@type': 'Person',
@@ -168,18 +161,9 @@ const Blog: React.FC = () => {
                             alternateName: 'Lại Minh Sáng YOO',
                             url: 'https://yoonique.netlify.app/'
                         },
-                        about: [
-                            { '@type': 'Thing', name: 'Web Development' },
-                            { '@type': 'Thing', name: 'React' },
-                            { '@type': 'Thing', name: 'Python' },
-                            { '@type': 'Thing', name: 'TypeScript' },
-                            { '@type': 'Thing', name: 'Security Tools' },
-                            { '@type': 'Thing', name: 'Steganography' },
-                            { '@type': 'Thing', name: 'Software Engineering' }
-                        ],
                         isPartOf: {
                             '@type': 'WebSite',
-                            name: 'Lại Minh Sáng (Lại Minh Sáng YOO) Portfolio',
+                            name: 'Lại Minh Sáng Portfolio',
                             url: 'https://yoonique.netlify.app/'
                         }
                     })}
@@ -214,11 +198,11 @@ const Blog: React.FC = () => {
                             <h2>⚠️ Oops! Something went wrong</h2>
                             <p>We couldn't load the blog posts. Please try again later.</p>
                             <a
-                                href="https://dev.to/Lại Minh Sáng_r_n_r"
+                                href="/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Visit Dev.to →
+                                Back to Home →
                             </a>
                         </ErrorState>
                     ) : posts.length === 0 ? (
@@ -230,11 +214,11 @@ const Blog: React.FC = () => {
                             <h2>📝 No posts yet</h2>
                             <p>I haven't published any blog posts yet. Check back soon!</p>
                             <a
-                                href="https://dev.to/Lại Minh Sáng_r_n_r"
+                                href="/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Follow me on Dev.to →
+                                Back to Home →
                             </a>
                         </EmptyState>
                     ) : (

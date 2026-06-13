@@ -66,19 +66,13 @@ const SEO: React.FC<SEOProps> = ({
         <meta property="article:modified_time" content={modifiedAt} />
       )}
       {type === 'article' && (
-        <meta property="article:author" content="https://dev.to/Lại Minh Sáng_r_n_r" />
+        <meta property="article:author" content="https://github.com" />
       )}
       {tags?.map(tag => (
         <meta key={tag} property="article:tag" content={tag} />
       ))}
 
-      {/* Dev.to RSS Alternate Feed */}
-      <link
-        rel="alternate"
-        type="application/rss+xml"
-        title="Lại Minh Sáng's Blog on Dev.to"
-        href="https://dev.to/feed/Lại Minh Sáng_r_n_r"
-      />
+      {/* RSS feed disabled until a GitHub README blog feed is configured */}
 
       {/* Additional Meta Tags */}
       {noIndex
@@ -100,8 +94,7 @@ const SEO: React.FC<SEOProps> = ({
           image: 'https://yoonique.netlify.app/logo512.png',
           sameAs: [
             'https://github.com/sanglm2207',
-            'https://www.linkedin.com/in/kaidev99/',
-            'https://dev.to/kaidev99'
+            'https://www.linkedin.com/in/kaidev99/'
           ],
           jobTitle: 'Full Stack Developer',
           worksFor: {
@@ -210,8 +203,7 @@ const SEO: React.FC<SEOProps> = ({
           },
           sameAs: [
             'https://github.com/sanglm2207',
-            'https://www.linkedin.com/in/kaidev99/',
-            'https://dev.to/kaidev99'
+            'https://www.linkedin.com/in/kaidev99/'
           ]
         })}
       </script>

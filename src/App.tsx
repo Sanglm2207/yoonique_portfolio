@@ -82,7 +82,8 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
-// const Blog = lazy(() => import('./pages/Blog'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 /**
@@ -109,11 +110,16 @@ function AppRoutes() {
           <Projects />
         </ErrorBoundary>
       } />
-      {/* <Route path="/blog" element={
+      <Route path="/blog" element={
         <ErrorBoundary fallback={<PageError message="Blog page failed to load" />}>
           <Blog />
         </ErrorBoundary>
-      } /> */}
+      } />
+      <Route path="/blog/:slug" element={
+        <ErrorBoundary fallback={<PageError message="Blog detail failed to load" />}>
+          <BlogDetail />
+        </ErrorBoundary>
+      } />
       <Route path="/contact" element={
         <ErrorBoundary fallback={<PageError message="Contact page failed to load" />}>
           <Contact />
