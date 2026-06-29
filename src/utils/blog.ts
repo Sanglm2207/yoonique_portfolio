@@ -20,28 +20,32 @@ const FALLBACK_GITHUB_BRANCH = import.meta.env.VITE_GITHUB_BLOG_BRANCH || 'main'
 const FALLBACK_GITHUB_PATH = import.meta.env.VITE_GITHUB_BLOG_README_PATH || 'README.md';
 
 async function fetchBlogPosts(): Promise<BlogPost[]> {
-    const response = await fetch(API_PATH, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+    try {
+        const response = await fetch(API_PATH, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
 
-    if (response.ok) {
-        return (await response.json()) as BlogPost[];
+        if (response.ok) {
+            return (await response.json()) as BlogPost[];
+        }
+
+        throw new Error(`Blog API error: ${response.status}`);
+    } catch (error) {
+        if (FALLBACK_GITHUB_REPO) {
+            console.warn('Blog API unavailable; falling back to GitHub README source.', error);
+            const fallbackPost = await fetchFallbackPost(
+                FALLBACK_GITHUB_REPO,
+                FALLBACK_GITHUB_BRANCH,
+                FALLBACK_GITHUB_PATH
+            );
+            return [fallbackPost];
+        }
+
+        throw error;
     }
-
-    if (FALLBACK_GITHUB_REPO) {
-        console.warn(`Blog API unavailable (${response.status}); falling back to GitHub README source.`);
-        const fallbackPost = await fetchFallbackPost(
-            FALLBACK_GITHUB_REPO,
-            FALLBACK_GITHUB_BRANCH,
-            FALLBACK_GITHUB_PATH
-        );
-        return [fallbackPost];
-    }
-
-    throw new Error(`Blog API error: ${response.status}`);
 }
 
 async function fetchFallbackPost(sourceRepo: string, branch: string, path: string): Promise<BlogPost> {

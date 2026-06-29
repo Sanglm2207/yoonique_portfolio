@@ -192,6 +192,21 @@ export const ProjectsGrid = styled(Grid)`
   }
 `;
 
+export const ProjectsSection = styled(Section)`
+  padding-top: 0;
+`;
+
+export const ProjectImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+`;
+
+export const ProjectFallbackIcon = styled.div`
+  font-size: 4rem;
+`;
+
 export const ProjectCard = styled(motion.div)`
   position: relative;
   display: flex;
