@@ -193,7 +193,7 @@ const Home: React.FC = () => {
         >
           <StatsContent>
             <StatItem>
-              <h3>3+</h3>
+              <h3>5+</h3>
               <p>Years Experience</p>
             </StatItem>
             <StatItem>
