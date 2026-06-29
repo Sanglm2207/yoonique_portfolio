@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Container, Badge } from '../styles/GlobalStyle';
+import { Container } from '../styles/GlobalStyle';
 import SEO from '../components/SEO';
 import {
   ActionButton,
