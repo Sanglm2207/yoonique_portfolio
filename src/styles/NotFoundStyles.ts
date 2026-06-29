@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   padding: 60px 20px;
 `;
 
-export const Code = styled(motion.span)`
+const Code = styled(motion.span)`
   font-size: clamp(6rem, 20vw, 10rem);
   font-weight: 800;
   line-height: 1;
@@ -23,19 +23,19 @@ export const Code = styled(motion.span)`
   letter-spacing: -0.05em;
 `;
 
-export const Title = styled(motion.h1)`
+const Title = styled(motion.h1)`
   font-size: clamp(1.25rem, 4vw, 1.75rem);
   color: var(--dark-200);
   margin: var(--spacing-4) 0 var(--spacing-3);
 `;
 
-export const Sub = styled(motion.p)`
+const Sub = styled(motion.p)`
   color: var(--dark-400);
   font-size: var(--text-base);
   margin-bottom: var(--spacing-8);
 `;
 
-export const HomeLink = styled(motion(Link))`
+const HomeLink = styled(motion(Link))`
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-2);
@@ -53,3 +53,6 @@ export const HomeLink = styled(motion(Link))`
     color: var(--dark-950);
   }
 `;
+
+
+export { Wrapper, Code, Title, Sub, HomeLink };
